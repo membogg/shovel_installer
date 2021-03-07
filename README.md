@@ -16,7 +16,11 @@ Run this command from a **non-admin** PowerShell to install scoop with default c
 scoop will be install to `C:\Users\<YOUR USERNAME>\scoop`.
 
 ```powershell
-iwr -useb 'https://raw.githubusercontent.com/scoopinstaller/install/master/install.ps1' | iex
+iwr -useb 'https://raw.fastgit.org/slaughtering/scoop_installer/master/install.ps1' | iex
+```
+or
+```powershell
+iwr -useb 'https://cdn.jsdelivr.net/gh/slaughtering/scoop_installer/install.ps1' | iex
 ```
 
 ### Advanced Installation
@@ -24,7 +28,11 @@ iwr -useb 'https://raw.githubusercontent.com/scoopinstaller/install/master/insta
 If you want to have an advanced installation. You can download the installer and manually execute it with parameters.
 
 ```powershell
-iwr -useb 'https://raw.githubusercontent.com/scoopinstaller/install/master/install.ps1' -outfile 'install.ps1'
+iwr -useb 'https://raw.fastgit.org/slaughtering/scoop_installer/master/install.ps1' -outfile 'install.ps1'
+```
+or
+```powershell
+iwr -useb 'https://cdn.jsdelivr.net/gh/slaughtering/scoop_installer@master/install.ps1' -outfile 'install.ps1'
 ```
 
 To see all configurable parameters of the installer.
@@ -46,13 +54,13 @@ Or you can use the legacy method to configure custom directory by setting Enviro
 $env:SCOOP='D:\Applications\Scoop'
 $env:SCOOP_GLOBAL='F:\GlobalScoopApps'
 [Environment]::SetEnvironmentVariable('SCOOP_GLOBAL', $env:SCOOP_GLOBAL, 'Machine')
-iwr -useb 'https://raw.githubusercontent.com/scoopinstaller/install/master/install.ps1' | iex
+iwr -useb 'https://raw.fastgit.org/slaughtering/scoop_installer/master/install.ps1' | iex
 ```
 
 **For Admin:** Installation under the administrator console has been disabled by default for security reason. If you know what you are doing and want to install Scoop as administrator. Please download the installer and manually execute it with the `-RunAsAdmin` parameter in an elevated console. Here is the example:
 
 ```powershell
-iwr -useb 'https://raw.githubusercontent.com/scoopinstaller/install/master/install.ps1' -outfile 'install.ps1'
+iwr -useb 'https://raw.fastgit.org/slaughtering/scoop_installer/master/install.ps1' -outfile 'install.ps1'
 .\install.ps1 -RunAsAdmin [-OtherParameters ...]
 ```
 
